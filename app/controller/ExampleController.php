@@ -8,7 +8,7 @@ class ExampleController {
      * 
      */
     public function index() {
-        
+        include './app/views/index.php';
     }
 
 }
