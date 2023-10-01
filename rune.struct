@@ -1,0 +1,16 @@
+Liberius /
+    - app
+        - controllers
+            - Controller.php
+        - models
+            - 
+        - views
+            - index.rune.php
+    - core
+    - public
+        - css
+        - js
+        - src
+            - index.php
+    - route
+        - routes.php

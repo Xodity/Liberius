@@ -1,0 +1,11 @@
+{
+    "name": "laramus/liberius",
+    "description": "Light PHP Framework based on JavaScript and composer CLI.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Laramus\\Liberius\\": "app/"
+        }
+    },
+    "require": {}
+}

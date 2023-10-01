@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #818080;
+}
+
+img{
+    border-radius: 100%;
+    width: 400px;
+}
+
+p{
+    text-align: center;
+    color: white;
+    font-size: large;
+}
