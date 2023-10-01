@@ -1,0 +1,27 @@
+{
+  "name": "liberius",
+  "version": "1.0.0",
+  "description": "Light PHP Framework based on JavaScript and composer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node core/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laramus/Liberius.git"
+  },
+  "keywords": [
+    "liberius"
+  ],
+  "author": "Laramus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Laramus/Liberius/issues"
+  },
+  "homepage": "https://github.com/Laramus/Liberius#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "php-express": "^0.0.3"
+  }
+}

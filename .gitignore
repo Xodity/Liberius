@@ -1,0 +1,6 @@
+# modules-core
+/node_modules
+
+# lock package
+*-lock.*
+*.lock
