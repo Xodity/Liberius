@@ -7,7 +7,6 @@ use Laramus\Liberius\Controllers\HomeController;
  */
 function handleRequest()
 {
-    // Mendapatkan URI permintaan saat ini
     $uri = $_SERVER['REQUEST_URI'];
 
     // route defined in swith route
