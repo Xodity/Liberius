@@ -14,7 +14,7 @@ class HomeController extends Controller
         /**
          * @param mixed
          */
-        $this->view->render('index.rune.php');
+        $this->view->render('index');
     }
 
     public function about()
@@ -22,6 +22,6 @@ class HomeController extends Controller
         /**
          * @param mixed
          */
-        $this->view->render('about.rune.php');
+        $this->view->render('about');
     }
 }
