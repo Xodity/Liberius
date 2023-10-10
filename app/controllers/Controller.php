@@ -34,6 +34,6 @@ class View
      */
     public function render($viewName)
     {
-        require_once __DIR__ . '/../views/' . $viewName;
+        require_once __DIR__ . '/../../rune/views/' . $viewName . '.' .'rune.php';
     }
 }

@@ -22,3 +22,9 @@ p{
     color: white;
     font-size: large;
 }
+code {
+    background-color: #282a36;
+    color: #f8f8f2;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
