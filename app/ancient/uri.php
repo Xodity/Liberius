@@ -1,5 +1,4 @@
 <?php
-
 namespace Laramus\Liberius\Ancient;
 require_once __DIR__ . "/../../route/routes.php";
 
