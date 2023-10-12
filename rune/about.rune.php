@@ -9,7 +9,7 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <p>About Liberius</p>
+            <p>About Liberius <?= $data['id'] ?></p>
         </div>
     </div>
 </body>

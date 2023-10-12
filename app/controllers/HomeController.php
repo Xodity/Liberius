@@ -17,11 +17,19 @@ class HomeController extends Controller
         $this->view->render('index');
     }
 
-    public function about()
+    public function about($id)
     {
         /**
          * @param mixed
          */
         $this->view->render('about');
+    }
+
+    public function store($request) {
+        var_dump($request);
+    }
+
+    public function update($request, $id) {
+        var_dump($request);
     }
 }
