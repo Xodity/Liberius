@@ -1,28 +1,23 @@
 <?php
 
 use Laramus\Liberius\Controllers\HomeController;
+use Laramus\Liberius\Ancient\Uri;
 
 /**
  * @access
  */
 function handleRequest()
 {
-    $uri = $_SERVER['REQUEST_URI'];
+    $router = new Uri;
+    $method = $_SERVER['REQUEST_METHOD'];
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-    // route defined in swith route
-    switch ($uri) {
-        case '/':
-            $controller = new HomeController();
-            $controller->index();
-            break;
-        case '/about':
-            $controller = new HomeController();
-            $controller->about();
-            break;
-        default:
-            handleNotFound();
-            break;
-    }
+    $router->get("/", [HomeController::class, "index"]);
+    $router->post("/", [HomeController::class, "store"]);
+    $router->get("/show/{id}", [HomeController::class, "about"]);
+    $router->post("/show/{id}", [HomeController::class, "update"]);
+
+    $router->dispatch($uri, $method);
 }
 
 /**

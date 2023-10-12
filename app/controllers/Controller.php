@@ -32,8 +32,8 @@ class View
      *
      * @param string $viewName name file to render; defaults to $viewName
      */
-    public function render($viewName)
+    public function render($viewName, $data = [])
     {
-        require_once __DIR__ . '/../../rune/views/' . $viewName . '.' .'rune.php';
+        require_once __DIR__ . '/../../rune/' . $viewName . '.' .'rune.php';
     }
 }
