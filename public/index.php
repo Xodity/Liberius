@@ -1,4 +1,5 @@
 <?php
+use Laramus\Liberius\Ancient\Uri;
 // ----------------------------------------------------------------
 /**
  * this is index specific for public instances of this Framework
@@ -8,3 +9,5 @@
 // ----------------------------------------------------------------
 require_once __DIR__ . '/../vendor/autoload.php'; 
 require_once __DIR__ . '/../routes/route.php';
+
+Uri::dispatchRequest();
