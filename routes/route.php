@@ -14,5 +14,3 @@ Uri::get("/", [HomeController::class, "index"]);
 Uri::post("/", [HomeController::class, "store"]);
 Uri::get("/show/{id}", [HomeController::class, "about"]);
 Uri::post("/show/{id}", [HomeController::class, "update"]);
-
-Uri::dispatchRequest();
