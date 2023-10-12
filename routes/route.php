@@ -1,4 +1,6 @@
 <?php
+use Laramus\Liberius\Ancient\Uri;
+use Laramus\Liberius\Controllers\HomeController;
 // ----------------------------------------------------------------
 /**
  * this is index specific for public instances of this Framework
@@ -6,5 +8,11 @@
  * Copyright (MIT) 2023 - 2024, Laramus Organization and contributors
  */
 // ----------------------------------------------------------------
-require_once __DIR__ . '/../vendor/autoload.php'; 
-require_once __DIR__ . '/../routes/route.php';
+
+
+Uri::get("/", [HomeController::class, "index"]);
+Uri::post("/", [HomeController::class, "store"]);
+Uri::get("/show/{id}", [HomeController::class, "about"]);
+Uri::post("/show/{id}", [HomeController::class, "update"]);
+
+Uri::dispatchRequest();
