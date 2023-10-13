@@ -1,66 +1,67 @@
 <?php
-namespace Laramus\Liberius\Ancient;
-require_once __DIR__ . "/../../route/routes.php";
 
-class Uri {
-    protected $routes = [
+namespace Laramus\Liberius\Ancient;
+
+class Uri
+{
+    public static function dispatchRequest()
+    {
+        $method = $_SERVER['REQUEST_METHOD'];
+        self::dispatch($method);
+    }
+    protected static $routes = [
         "GET" => [],
         "POST" => [],
     ];
 
-    public function get($route, $handler)
+    public static function get($route, $handler)
     {
-        // save route
-        $this->routes['GET'][$route] = $handler;
-    }
-    public function post($route, $handler)
-    {
-        // save route
-        $this->routes['POST'][$route] = $handler;
+        self::$routes['GET'][$route] = $handler;
     }
 
-    public function dispatch($uri, $method) 
+    public static function post($route, $handler)
     {
+        self::$routes['POST'][$route] = $handler;
+    }
+
+    public static function dispatch($method)
+    {
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $method = strtoupper($method);
 
-        if (isset($this->routes[$method][$uri])) {
-            $handler = $this->routes[$method][$uri];
+        if (isset(self::$routes[$method][$uri])) {
+            $handler = self::$routes[$method][$uri];
 
-            if(is_callable($handler)){
-                // run clousure
+            if (is_callable($handler)) {
                 $handler();
             } elseif (is_array($handler) && count($handler) == 2) {
                 $requestData = [];
 
-                // get method and request
                 if ($method === 'POST') {
                     $requestData = $_POST;
-                    call_user_func_array([new $handler[0], $handler[1]],  [ "request" => (object) $requestData ]);
+                    call_user_func_array([new $handler[0], $handler[1]], ["request" => (object) $requestData]);
                     exit;
-                }elseif ($method === "GET") {
-                    if($_GET) {
+                } elseif ($method === "GET") {
+                    if ($_GET) {
                         $requestData = $_GET;
-                        call_user_func_array([new $handler[0], $handler[1]],  [ "request" => (object) $requestData ]);
+                        call_user_func_array([new $handler[0], $handler[1]], ["request" => (object) $requestData]);
                         exit;
                     }
                 }
 
-                // exec view without params
                 $controller = new $handler[0];
-                $method = $handler[1];
-                $controller->$method();
+                $action = $handler[1];
+                $controller->$action();
                 exit;
             }
         } else {
-            // exec view with params
             $params = [];
-            foreach ($this->routes[$method] as $route => $handler) {
+            foreach (self::$routes[$method] as $route => $handler) {
                 $routePattern = preg_replace('/\/\{([A-Za-z0-9_]+)\}/', '/([^/]+)', $route);
                 $routePattern = str_replace('/', '\/', $routePattern);
 
-                // get key for params
                 preg_match_all('/\{([^}]+)\}/', $route, $keyparams);
-        
+
                 $matches = [];
                 if (preg_match('/^' . $routePattern . '$/', $uri, $matches)) {
                     $handlerParams = $handler;
@@ -75,32 +76,34 @@ class Uri {
 
                     $requestData = [];
 
-                    // get method and request
                     if ($method === 'POST') {
                         $requestData = $_POST;
                     } elseif ($method === 'GET') {
-                        if($_GET) {
+                        if ($_GET) {
                             $requestData = $_GET;
                         }
                     }
 
-                    
                     $realparams = [];
                     foreach ($keyparams[1] as $i => $keyparam) {
                         $realparams[$keyparam] = $params[$i] ?? null;
                     }
-                    
-                    $request = ["request" => (object) $requestData ];
 
+                    $request = ["request" => (object) $requestData];
                     $combinedata = array_merge($requestData ? $request : [], $realparams);
 
-                    call_user_func_array([$controller, $action],  $combinedata);
+                    call_user_func_array([$controller, $action], $combinedata);
                     return;
                 }
             }
 
-            handleNotFound();
-        } 
+            self::handleNotFound();
+        }
     }
 
+    protected static function handleNotFound()
+    {
+        header('HTTP/1.0 404 Not Found');
+        echo '404 Not Found';
+    }
 }
