@@ -6,6 +6,7 @@ Light `php` Framework collaborate with javascript runtime `NODEJS`. `CLI` based 
 - [@qiraxyz](https://www.github.com/qiraxyz)
 - [@dhykas](https://github.com/dhykas)
 - [@ZeroneDoo](https://github.com/ZeroneDoo)
+- [@LumiNovryM](https://github.com/LumiNovryM)
 
 `FEEL FREE TO CONTRIBUTE AND ADD YOUR NAME IN HERE`
 
