@@ -2,6 +2,8 @@
 
 namespace Laramus\Liberius\Controllers;
 
+use Laramus\Liberius\Ancient\Flasher;
+
 /**
  * BaseController
  * 
@@ -9,31 +11,27 @@ namespace Laramus\Liberius\Controllers;
  */
 class Controller
 {
-    protected $view;
+    public $flasher;
 
-    /**
-     * Constructor class for Controller.
-     */
     public function __construct()
     {
-        $this->view = new View();
+        $this->flasher = new Flasher;
     }
-}
 
-/**
- * View
- * 
- * this is class for rendering rune.php views 
- */
-class View
-{
-    /**
-     * Render template based on name file.
-     *
-     * @param string $viewName name file to render; defaults to $viewName
-     */
-    public function render($viewName, $data = [])
+    public function view($viewName, $data = [])
     {
+        
+        if(strpos($viewName, ".")) {
+            $viewName = str_replace(".", "/", $viewName);
+        }
+        $flasher = $this->flasher;
+
         require_once __DIR__ . '/../../rune/' . $viewName . '.' .'rune.php';
+    }
+
+    public function redirect($route)
+    {
+        header("Location: " . $route);
+        return $this->flasher;
     }
 }

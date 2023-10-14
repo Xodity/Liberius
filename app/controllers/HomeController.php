@@ -2,6 +2,8 @@
 
 namespace Laramus\Liberius\Controllers;
 
+use Laramus\Liberius\Ancient\Flasher;
+
 /**
  * 
  * @extends parent<Controller>
@@ -14,7 +16,7 @@ class HomeController extends Controller
         /**
          * @param mixed
          */
-        $this->view->render('index');
+        $this->view('index');
     }
 
     public function about($id)
@@ -22,7 +24,8 @@ class HomeController extends Controller
         /**
          * @param mixed
          */
-        $this->view->render('about');
+        // $this->view('about');
+        $this->redirect('/')->setFlash("msg_success", "Berhasil menambahkan data");
     }
 
     public function store($request) {
