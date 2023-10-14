@@ -11,6 +11,9 @@
         <div class="container">
             <img src="/src/Liberius.jpeg" alt="">
             <p><code>Start Edit At rune/views/index.rune.php</code></p>
+            <?php if($flasher::has("msg_success")) : ?>
+            <pre><?= $flasher::get("msg_success") ?></pre>
+            <?php endif ?>
         </div>
     </div>
 </body>
