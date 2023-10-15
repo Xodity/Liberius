@@ -34,4 +34,14 @@ class Controller
         header("Location: " . $route);
         return $this->flasher;
     }
+
+    public function hash($value)
+    {
+        return password_hash($value, PASSWORD_BCRYPT);
+    }
+
+    public function hash_check($value, $hash)
+    {
+        return password_verify($value, $hash);
+    }
 }
