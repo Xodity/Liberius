@@ -33,4 +33,5 @@ omirus create-app Laramus/Liberius
 - re-useable
 - Fullstack Framework
 - Light code
+- npm package support
 
