@@ -9,6 +9,8 @@ use Laramus\Liberius\Controllers\HomeController;
  */
 // ----------------------------------------------------------------
 
+# Directory Separator
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'ancient' . DIRECTORY_SEPARATOR . 'uri.php';
 
 Uri::get("/", [HomeController::class, "index"]);
 Uri::post("/", [HomeController::class, "store"]);
