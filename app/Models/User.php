@@ -1,7 +1,7 @@
 <?php
 
 namespace Laramus\Liberius\Models;
-use Laramus\Liberius\Ancient\Model;
+use Laramus\Liberius\Models\Model;
 
 /**
  * Class User
@@ -10,14 +10,6 @@ use Laramus\Liberius\Ancient\Model;
  */
 class User extends Model
 {
-    private $db;
+    protected $table = "users";
 
-    public function getActiveUsers() {
-        return $this->getAll();
-    }
-
-    /**
-     * 
-     * @return array
-     */
 }

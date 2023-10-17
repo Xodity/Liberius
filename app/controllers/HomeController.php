@@ -2,7 +2,7 @@
 
 namespace Laramus\Liberius\Controllers;
 
-use Laramus\Liberius\Ancient\Flasher;
+use Laramus\Liberius\Models\User;
 
 /**
  * 
@@ -16,6 +16,23 @@ class HomeController extends Controller
         /**
          * @param mixed
          */
+        // $datas = User::query("SELECT * FROM users")->resultSet();
+
+        // $datas = User::create([
+        //     "email" => "testing@gmaial.com",
+        //     "password" => "XII PPLG 2"
+        // ]);
+
+        // $data = User::update(11, [
+        //     "email" => "ridho1@gmail.com",
+        //     "password" => 123
+        // ]);
+
+        // $data = User::find(2);
+        // $data = User::find(2, [ "email", "password" ]);
+
+        // $data = User::delete(11);
+
         $this->view('index');
     }
 
