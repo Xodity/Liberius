@@ -1,0 +1,48 @@
+└─ app/
+   └─ ancient/
+      ├─ uri.php
+   └─ controllers/
+      ├─ Controller.php
+      ├─ HomeController.php
+   └─ models/
+      ├─ Model.php
+      ├─ User.php
+├─ composer.json
+├─ composer.lock
+└─ database/
+   └─ factory/
+      ├─ dbfactory.php
+   └─ migrations/
+      ├─ m_.php
+   ├─ rune.schema
+   └─ seeder/
+      ├─ dbseeder.php
+├─ omirus.struct
+├─ package.json
+└─ public/
+   └─ css/
+      ├─ global.css
+   ├─ index.php
+   └─ js/
+   └─ src/
+      ├─ Liberius.jpeg
+└─ routes/
+   ├─ api.php
+   ├─ route.php
+└─ rune/
+   ├─ about.rune.php
+   ├─ index.rune.php
+├─ rune.struct
+└─ vendor/
+   ├─ autoload.php
+   └─ composer/
+      ├─ autoload_classmap.php
+      ├─ autoload_namespaces.php
+      ├─ autoload_psr4.php
+      ├─ autoload_real.php
+      ├─ autoload_static.php
+      ├─ ClassLoader.php
+      ├─ installed.json
+      ├─ installed.php
+      ├─ InstalledVersions.php
+      ├─ LICENSE
