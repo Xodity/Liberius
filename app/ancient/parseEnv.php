@@ -26,7 +26,7 @@ function parseEnv($filePath) {
 }
 
 try {
-    parseEnv(__DIR__ . '/../../.env');
+    parseEnv(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '.env');
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
     exit;
