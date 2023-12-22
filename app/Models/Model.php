@@ -77,7 +77,7 @@ class Model extends DBCon{
             $datas = "*";
         }
 
-        $sql = "SELECT " . $datas . " FROM " . self::$tbl ." WHERE id = :id";
+        $sql = "SELECT " . $datas . " FROM " . self::$tbl . " WHERE id = :id";
         self::query($sql);
 
         self::bind("id", $id);
@@ -104,7 +104,6 @@ class Model extends DBCon{
         // get latest data
         $lastid = self::$dbhandler->lastInsertId();
         return self::find($lastid);
-
     }
 
     public static function update($id, $datas) 
@@ -130,7 +129,6 @@ class Model extends DBCon{
         self::execute();
 
         return self::find($id);
-
     }
 
     public static function delete($id)
@@ -150,5 +148,4 @@ class Model extends DBCon{
             return false;
         }
     } 
-    
 }

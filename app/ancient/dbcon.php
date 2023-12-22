@@ -1,7 +1,8 @@
 <?php
 
 namespace Laramus\Liberius\Ancient;
-require __DIR__ . '/parseEnv.php';
+
+require __DIR__ . DIRECTORY_SEPARATOR . 'parseEnv.php';
 
 class DBCon {
     protected $dbh; // database handler

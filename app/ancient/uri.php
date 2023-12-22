@@ -9,6 +9,7 @@ class Uri
         $method = $_SERVER['REQUEST_METHOD'];
         self::dispatch($method);
     }
+
     protected static $routes = [
         "GET" => [],
         "POST" => [],
@@ -58,7 +59,7 @@ class Uri
             $params = [];
             foreach (self::$routes[$method] as $route => $handler) {
                 $routePattern = preg_replace('/\/\{([A-Za-z0-9_]+)\}/', '/([^/]+)', $route);
-                $routePattern = str_replace('/', '\/', $routePattern);
+                $routePattern = str_replace('/', DIRECTORY_SEPARATOR, $routePattern);
 
                 preg_match_all('/\{([^}]+)\}/', $route, $keyparams);
 

@@ -20,13 +20,13 @@ class Controller
 
     public function view($viewName, $data = [])
     {
-        
-        if(strpos($viewName, ".")) {
-            $viewName = str_replace(".", "/", $viewName);
+        if (strpos($viewName, ".")) {
+            $viewName = str_replace(".", DIRECTORY_SEPARATOR, $viewName);
         }
         $flasher = $this->flasher;
 
-        require_once __DIR__ . '/../../rune/' . $viewName . '.' .'rune.php';
+        $viewPath = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'rune' . DIRECTORY_SEPARATOR . $viewName . '.' . 'rune.php';
+        require_once $viewPath;
     }
 
     public function redirect($route)
