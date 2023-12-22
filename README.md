@@ -1,10 +1,10 @@
 
 # Liberius Framework
-Light `php` Framework collaborate with javascript runtime `NODEJS`. `CLI` based on javascript [#omirus-library](https://www.github.com/laramus/omirus-library). 
+Light `php` Framework collaborate with javascript runtime `NODEJS`. `CLI` based on javascript [#omirus](https://www.github.com/laramus/omirus). 
 
 ## Deployment
 
-To deploy this project [#omirus-library](https://www.github.com/laramus/omirus-library)
+To deploy this project [#omirus](https://www.github.com/laramus/omirus)
  install and run :
 
 ```bash
