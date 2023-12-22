@@ -1,16 +1,6 @@
 
 # Liberius Framework
 Light `php` Framework collaborate with javascript runtime `NODEJS`. `CLI` based on javascript [#omirus-library](https://www.github.com/laramus/omirus-library). 
-## Authors
-
-- [@qiraxyz](https://www.github.com/qiraxyz)
-- [@dhykas](https://github.com/dhykas)
-- [@ZeroneDoo](https://github.com/ZeroneDoo)
-- [@LumiNovryM](https://github.com/LumiNovryM)
-
-`FEEL FREE TO CONTRIBUTE AND ADD YOUR NAME IN HERE`
-
-
 
 ## Deployment
 
@@ -18,20 +8,20 @@ To deploy this project [#omirus-library](https://www.github.com/laramus/omirus-l
  install and run :
 
 ```bash
-npm i -g omirus-library
+npm i -g omirus
 ```
 
 ```bash
-omirus create-app Laramus/Liberius
+omirus create-app <name-path> laramus/liberius
 ```
 
 
 ## Features
 
-- MVC Maker
+- MVC support
 - composer package support
-- re-useable
-- Fullstack Framework
-- Light code
-- npm package support
+- npm package support 
+- stand-alone application support
+- Fullstack Framework support
+- Light code and Fast run
 
